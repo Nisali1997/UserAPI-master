@@ -16,6 +16,7 @@ import AdminNavbar from './AdminNavBar/AdminNavBar';
 import EditorHomePage from './Editor/EditorHomePage';
 import CreateConference from './Editor/AddConference';
 import ViewConferences from './Editor/ViewAllConferences';
+import ViewCetainConference from './Editor/ViewCertainConference';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/editor" component={EditorHomePage}/>
           <Route path="/editorCreate" component={CreateConference}/>
           <Route path="/editorView" component={ViewConferences}/>
+          <Route path="/:id" component={ViewCetainConference}/>
          </Switch>
          </section>
      
