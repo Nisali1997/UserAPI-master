@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './ViewAllConference.css';
 
 class ViewConferences extends React.Component{
     constructor(props){
@@ -23,18 +24,21 @@ class ViewConferences extends React.Component{
 
     render() {
         return (
-             <div className="container">
+             <div className="editor">
+                 <br></br><br></br>
                  <h1>Conferences</h1>
                  {this.state.conference.length>0 && this.state.conference.map((item,index)=>(
-                     <div key={index} className="card border-primary mb-3">
+                     <div key={index} className="card border-primary mb-3 " style={{ width: "50%", marginLeft: "25%" }}>
                          <div className="p-3" onClick={e=>this.navigateConferencePage(e,item._id)} >
-                         <h4>Conference Name : {item.conferenceName}</h4>
-                         <h5>Date : {item.date}</h5>
-                         <h5>Venue : {item.venue}</h5>
-                         <h5>Start Time : {item.startTime}</h5>
-                            <h5>Duration : {item.duration}</h5>
-                            <h5>Number of Attendees : {item.numberOfAttendees}</h5>
-                            <h5>Maximum Number of Attendees :{item.maximumAttendees}</h5>
+                         
+                         <h5>Conference Name : {item.conferenceName}</h5>
+                         <h6>Date : {item.date}</h6>
+                         <h6>Venue : {item.venue}</h6>
+                         <h6>Start Time : {item.startTime}</h6>
+                            <h6>Duration : {item.duration}</h6>
+                            <h6>Number of Attendees : {item.numberOfAttendees}</h6>
+                            <h6>Maximum Number of Attendees :{item.maximumAttendees}</h6>
+                            
                         {/* <button onClick={e=>this.navigateConferencePage(e,item._id)}>Edit</button> */}
                          </div>
                      </div>

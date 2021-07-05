@@ -48,7 +48,8 @@ class CreateConference extends React.Component{
 
     render() {
         return (
-             <div className="container">
+             <div className="editor">
+               <br></br>
                  <h1>Create Conference</h1>
                 
                  <form onSubmit={this.onSubmit}  class="form-horizontal">
@@ -56,39 +57,47 @@ class CreateConference extends React.Component{
                  
 
 
-   <div className="mb-3">
+   <div className="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
     <label htmlFor="Type" class="form-label">Conference Name</label>
     <input type="text" class="form-control" id="Type" name="cconferenceName" value={this.state.cconferenceName} onChange={this.onChange} aria-describedby="emailHelp"/>
   </div>
 
 
+  <div class="row">
+    <div class="col">
+    <div className="mb-3" style={{ width: "50%", marginLeft: "50%" }}>
+        <label htmlFor="Type" class="form-label">Date</label>
+        <input type="text" class="form-control" id="Type" name="cdate" value={this.state.cdate} onChange={this.onChange} aria-describedby="emailHelp"/>
+      </div>
 
-  <div className="mb-3">
-    <label htmlFor="Type" class="form-label">Date</label>
-    <input type="text" class="form-control" id="Type" name="cdate" value={this.state.cdate} onChange={this.onChange} aria-describedby="emailHelp"/>
+    </div>
+    <div class="col" >
+    <div class="mb-3"style={{ width: "50%"}} >
+        <label for="categoryDuration" class="form-label">Venue</label>
+        <input type="text" class="form-control" id="categoryDuration" name="cvenue" value={this.state.cvenue} onChange={this.onChange} />
+      </div>
+    </div>
   </div>
+  
 
-  <div class="mb-3">
-    <label for="categoryDuration" class="form-label">Venue</label>
-    <input type="text" class="form-control" id="categoryDuration" name="cvenue" value={this.state.cvenue} onChange={this.onChange} />
-  </div>
+  
 
-  <div class="mb-3">
+  <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
     <label for="categoryAmount" class="form-label">Start Time</label>
     <input type="text" class="form-control" id="categoryAmount" name="cstartTime" value={this.state.cstartTime} onChange={this.onChange} />
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
     <label for="categoryAmount" class="form-label">Duration</label>
     <input type="text" class="form-control" id="categoryAmount" name="cduration" value={this.state.cduration} onChange={this.onChange} />
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
     <label for="categoryAmount" class="form-label">Number of Attendees</label>
     <input type="Number" class="form-control" id="categoryAmount" name="cnumberOfAttendees" value={this.state.cnumberOfAttendees} onChange={this.onChange} />
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
     <label for="categoryAmount" class="form-label">Maximum Number of Attendees</label>
     <input type="Number" class="form-control" id="categoryAmount" name="cmaximumAttendees" value={this.state.cmaximumAttendees} onChange={this.onChange} />
   </div> 
@@ -98,8 +107,9 @@ class CreateConference extends React.Component{
    {/* <div data-testid="button">{label}</div> */}
   <button type="submit" class="btn btn-primary">Submit</button>
 
-  </form>
 
+  </form>
+<br></br><br></br>
              </div>
         );
     }
