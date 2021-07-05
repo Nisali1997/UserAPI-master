@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './Call_For_Papers.css';
+
 
 class CallForPapers extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-            researchPaper: [] 
+            researchPapers: [] 
         }
     }
 
     componentDidMount(){
         axios.get('http://localhost:8080/reviewerapi/viewAllConferenceResearchPapers')
         .then(response => {
-           this.setState({researchPaper: response.data.data})
+           this.setState({researchPapers: response.data})
         })
     }
 
@@ -23,12 +25,14 @@ class CallForPapers extends Component{
 
     render(){
         return(
-            <div className="container">
+            <div className="editor">
+                <br></br><br></br>
                 <h1>Call For Papers</h1>
-                {this.state.researchPaper.length>0 && this.state.researchPaper.map((item,index)=>(
-                    <div key={index} className="card mb-3">
+                {this.state.researchPapers.length>0 && this.state.researchPapers.map((item,index)=>(
+                    <div key={index} className="card border-primary mb-3">
                         <div className="p-3">
-                            <h5>Hello{item.cfpId}</h5>
+                            <h5>Name : {item.researchPaperName}</h5>
+                            <h6>ID :{item.researchPaperId}</h6>
                             </div>
 
                     </div>
