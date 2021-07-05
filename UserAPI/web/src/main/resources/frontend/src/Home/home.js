@@ -31,7 +31,7 @@ class Home extends Component{
                 <div styles={{ img: "url(/images/452059.png)" }}>
                
     </div>
-                <br></br> <br></br> <br></br><br></br>
+                <br></br> <br></br> <br></br>
                 <div> 
                     <h1 >ICAF 2021</h1>
                   
@@ -43,7 +43,7 @@ class Home extends Component{
                 
                 </div>
                   
-                    <br></br><br></br> <br></br> <br></br><br></br><br></br> <br></br> 
+                    <br></br><br></br> <br></br> <br></br>
                    <div className="container">
                    
                     <h3>All Conferences</h3>

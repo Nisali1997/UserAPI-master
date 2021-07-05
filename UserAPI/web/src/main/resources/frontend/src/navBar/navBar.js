@@ -11,7 +11,7 @@ class Navbar extends React.Component{
              <div>
 
 <nav class="navbar navbar-expand-custom navbar-mainbg" fixed="top">
-        <a class="navbar-brand navbar-logo" href="#">RNUN</a>
+        <a class="navbar-brand navbar-logo" href="#">ICAF</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars text-white"></i>
         </button>
