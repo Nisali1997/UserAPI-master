@@ -13,13 +13,14 @@ class RegistrationType extends React.Component {
 
   render() {
     return (
-      <div className="container col-md-6">
+      <div className="container">
         <br></br>
         <h2>Registration</h2>
         <br></br>
 
         <div
           style={{
+            position: "center",
             textAlign: "left",
             backgroundColor: "#EBF5FB",
             padding: "7px",
@@ -38,10 +39,9 @@ class RegistrationType extends React.Component {
                   approval
                 </li>
                 <li>
-                  If it is approved, you can register as a workshop presenter
-                </li>
-                <li>
-                  You can view the approved workshop proposals from below.
+                  Next, you can register as a workshop presenter from the
+                  following section, where it displays whether your proposal is
+                  approved or not.
                 </li>
               </ul>
             </li>
@@ -52,18 +52,23 @@ class RegistrationType extends React.Component {
                   First, you must upload a research paper and wait for the
                   approval
                 </li>
-                <li>If it is approved, you can register as a researcher</li>
-                <li>You can view the approved research papers from below.</li>
+                <li>
+                  Next, you can register as a researcher from the following
+                  section, where it displays whether your research paper is
+                  approved or not.
+                </li>
               </ul>
             </li>
           </ul>
         </div>
 
-        <div
-          className="mt-3"
-          style={{ border: "1px solid black", marginTop: "5px" }}
-        >
-          <div class="table-responsive">
+        <div className="mt-3 pt-3 mb-3">
+          <h5 style={{ textAlign: "left" }}>Document uploads by the users</h5>
+          <div
+            class="table-responsive"
+            className="col-md-8"
+            style={{ border: "1px solid black", marginTop: "5px" }}
+          >
             <table class="table align-middle">
               <thead>
                 <tr>
@@ -88,7 +93,7 @@ class RegistrationType extends React.Component {
                   <td>Research Paper </td>
 
                   <td>
-                    <a href="/workshop" class="btn btn-info" role="button">
+                    <a href="/researcher" class="btn btn-info" role="button">
                       Upload
                     </a>
                   </td>
@@ -97,7 +102,8 @@ class RegistrationType extends React.Component {
             </table>
           </div>
         </div>
-        <h3>Registration Fees</h3>
+        <div className="mt-4 mb-4"></div>
+        <h3 className="mt-4 pt-4">User Registration</h3>
 
         <hr></hr>
         <div
@@ -186,7 +192,7 @@ class RegistrationType extends React.Component {
         <label class="btn btn-outline-primary" for="btnradio2">Register</label>
         </a> */}
                     <a
-                      href="//viewWorkshopProposals"
+                      href="/viewWorkshopProposals"
                       class="btn btn-info"
                       role="button"
                     >

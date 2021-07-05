@@ -15,7 +15,7 @@ class Researcher extends React.Component {
     // console.log(e.target.files[0], "$$$$");
   }
 
-  handleWorkshopProposalUpload(e) {
+  handleResearchPaperUpload(e) {
     // console.log(this.state, "The state ---$$$");
 
     let file = this.state.file;
@@ -24,10 +24,10 @@ class Researcher extends React.Component {
 
     formData.append("file", file);
 
-    formData.append("name", "Workshop proposal");
+    formData.append("name", "Research Paper");
 
     axios({
-      url: `http://localhost:8080/file/upload/workshopProposal`,
+      url: `http://localhost:8080/file/upload/researchPaper`,
       method: "POST",
       // headers: {
       //     authorization: your token
@@ -44,65 +44,10 @@ class Researcher extends React.Component {
       <div className="container">
         <br></br>
         <br></br>
-        <h3>Registration</h3>
-        <form onSubmit={this.onSubmit}>
-          <div className="mb-3">
-            <label htmlFor="Type" class="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="Type"
-              name="rname"
-              value={this.state.rname}
-              onChange={this.onChange}
-              aria-describedby="emailHelp"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="email" class="form-label">
-              Email
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              name="remail"
-              value={this.state.remail}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="number" class="form-label">
-              Contact Number
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="number"
-              name="rnumber"
-              value={this.state.rnumber}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="passt" class="form-label">
-              Password
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="pass"
-              name="rpassword"
-              value={this.state.rpassword}
-              onChange={this.onChange}
-            />
-          </div>
-
+        <h3>Research Paper</h3>
+        <br></br>
+        <br></br>
+        <form>
           <div class="mb-3">
             <label for="passt" class="form-label">
               Upload Document
@@ -110,15 +55,17 @@ class Researcher extends React.Component {
             <br></br>
             <input
               type="file"
-              id="myFile"
               class="form-control"
-              name="filename"
-              value={this.state.filename}
-              onChange={this.onChange}
+              name="file"
+              onChange={(e) => this.handleFile(e)}
             />
           </div>
 
-          <button type="submit" class="btn btn-primary">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={(e) => this.handleResearchPaperUpload(e)}
+          >
             Submit
           </button>
         </form>
