@@ -17,15 +17,21 @@ public class UserService {
     private final AttendeeRepository attendeeRepository;
     private final ConferenceRepository conferenceRepository;
 
+    private final WorkshopRepository workshopRepository;
+    private final ResearchPaperRepository researchPaperRepository;
+
     @Autowired
     public UserService(UserRepository userRepository, WorkshopPresenterRepository workshopPresenterRepository,
             ResearcherRepository researcherRepository, AttendeeRepository attendeeRepository,
-            ConferenceRepository conferenceRepository) {
+            ConferenceRepository conferenceRepository, WorkshopRepository workshopRepository,
+            ResearchPaperRepository researchPaperRepository) {
         this.userRepository = userRepository;
         this.workshopPresenterRepository = workshopPresenterRepository;
         this.researcherRepository = researcherRepository;
         this.attendeeRepository = attendeeRepository;
         this.conferenceRepository = conferenceRepository;
+        this.workshopRepository = workshopRepository;
+        this.researchPaperRepository = researchPaperRepository;
     }
 
     public List<User> getAllUsers() {
@@ -66,6 +72,8 @@ public class UserService {
         if (attendees >= maxAttendees) {
             throw new IllegalStateException("Can't register! maximum number of attendees exceeded");
         } else {
+            conference.setNumberOfAttendees(conference.getNumberOfAttendees() + 1);
+            conferenceRepository.save(conference);
             attendeeRepository.save(attendee);
         }
     }
@@ -76,6 +84,14 @@ public class UserService {
 
     public List<Researcher> getAllResearchers() {
         return researcherRepository.findAll();
+    }
+
+    public List<ResearchPaper> getAllResearcherPapers() {
+        return researchPaperRepository.findAll();
+    }
+
+    public List<WorkshopProposal> getAllWorkshopProposals() {
+        return workshopRepository.findAll();
     }
 
 }

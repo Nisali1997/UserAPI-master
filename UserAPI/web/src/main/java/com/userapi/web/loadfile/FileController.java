@@ -23,6 +23,16 @@ public class FileController {
         return new ResponseEntity<>(fileService.addFile(file), HttpStatus.OK);
     }
 
+    @PostMapping("/upload/researchPaper")
+    public ResponseEntity<?> uploadResearchPaper(@RequestParam("file") MultipartFile file) throws IOException {
+        return new ResponseEntity<>(fileService.addResearchPaper(file), HttpStatus.OK);
+    }
+
+    @PostMapping("/upload/workshopProposal")
+    public ResponseEntity<?> uploadWorkshopProposal(@RequestParam("file") MultipartFile file) throws IOException {
+        return new ResponseEntity<>(fileService.addWorkshopProposal(file), HttpStatus.OK);
+    }
+
     @GetMapping("/download/{id}")
     public ResponseEntity<ByteArrayResource> download(@PathVariable String id) throws IOException {
         LoadFile loadFile = fileService.downloadFile(id);

@@ -14,12 +14,12 @@ import lombok.NoArgsConstructor;
 public class Researcher {
     @Id
     private String id;
-    private String name;
+    private String Name;
     private String email;
-    private int contactNumber;
+    private int ContactNumber;
     private String password;
-    private String paymentMethod;
-    private int amount;
+    private String PaymentMethod;
+    private int Amount;
     private String researchPaperId;
 
 }

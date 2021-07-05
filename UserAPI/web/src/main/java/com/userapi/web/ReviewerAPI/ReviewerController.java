@@ -48,17 +48,27 @@ public class ReviewerController {
         reviewerService.addNewReviewer(reviewer);
     }
 
-    @PostMapping("/approveDeclineConferenceResearchPaper")
-    public void approveDeclineResearchPaper(@RequestBody ResearchPaper researchPaper) {
-        activityService.addActivity("Approve/Decline Research Paper", researchPaper.toString());
-        reviewerService.approveDeclineConferenceResearchPaper(researchPaper);
+    // @PostMapping("/approveDeclineConferenceResearchPaper")
+    // public void approveDeclineResearchPaper(@RequestBody ResearchPaper researchPaper) {
+    //     activityService.addActivity("Approve/Decline Research Paper", researchPaper.toString());
+    //     reviewerService.approveDeclineConferenceResearchPaper(researchPaper);
+    // }
+
+    // // Approve Decline Workshop
+    // @PostMapping("/approveDeclineWorkshop")
+    // public void approveDeclineWorkshop(@RequestBody WorkshopProposal workshopProposal) {
+    //     activityService.addActivity("Approve/Decline Workshop",workshopProposal.toString());
+    //     reviewerService.approveDeclineWorkshop(workshopProposal);
+    // }
+
+    @PutMapping("/approveDeclineWorkshop")
+    public void approveDeclineWorkshop(@RequestBody WorkshopProposal workshopProposal) {
+        reviewerService.approveDeclineWorkshop(workshopProposal);
     }
 
-    // Approve Decline Workshop
-    @PostMapping("/approveDeclineWorkshop")
-    public void approveDeclineWorkshop(@RequestBody WorkshopProposal workshopProposal) {
-        activityService.addActivity("Approve/Decline Workshop",workshopProposal.toString());
-        reviewerService.approveDeclineWorkshop(workshopProposal);
+    @PutMapping("/approveDeclineConferenceResearchPaper")
+    public void approveDeclineResearchPapers(@RequestBody ResearchPaper researchPaper) {
+        reviewerService.approveDeclinerResearchPaper(researchPaper);
     }
 
     // Get all Workshops

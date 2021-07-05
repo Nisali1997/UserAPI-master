@@ -66,6 +66,16 @@ public class UserController {
         return editorService.getApprovedConferences();
     }
 
+    @GetMapping("/viewAllResearchPapers")
+    public List<ResearchPaper> getResearchPapers() {
+        return userService.getAllResearcherPapers();
+    }
+
+    @GetMapping("/viewAllWorkshopProposals")
+    public List<WorkshopProposal> getWorkshopProposals() {
+        return userService.getAllWorkshopProposals();
+    }
+
     @PostMapping("/")
     public void registerNewUser(@RequestBody User user) {
         userService.addNewUser(user);
@@ -73,12 +83,12 @@ public class UserController {
 
     @PostMapping("/createConferenceRequest")
     public ResponseEntity<?> createProposal(@RequestParam("file") MultipartFile file) throws IOException {
-        return new ResponseEntity<>(fileService.addFile(file), HttpStatus.OK);
+        return new ResponseEntity<>(fileService.addResearchPaper(file), HttpStatus.OK);
     }
 
     @PostMapping("/createResearchActivity")
     public ResponseEntity<?> createResearchPaper(@RequestParam("file") MultipartFile file) throws IOException {
-        return new ResponseEntity<>(fileService.addFile(file), HttpStatus.OK);
+        return new ResponseEntity<>(fileService.addWorkshopProposal(file), HttpStatus.OK);
     }
 
     @PostMapping("/workshoppresenter")

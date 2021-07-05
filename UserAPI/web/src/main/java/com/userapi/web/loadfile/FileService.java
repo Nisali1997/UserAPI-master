@@ -25,6 +25,12 @@ public class FileService {
     @Autowired
     private GridFsOperations operations;
 
+    @Autowired
+    private ResearchPaperRepository researchPaperRepository;
+
+    @Autowired
+    private WorkshopRepository workshopRepository;
+
     public String addFile(MultipartFile upload) throws IOException {
 
         DBObject metadata = new BasicDBObject();
@@ -32,6 +38,44 @@ public class FileService {
 
         Object fileID = template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(),
                 metadata);
+
+        return fileID.toString();
+    }
+
+    public String addResearchPaper(MultipartFile upload) throws IOException {
+
+        DBObject metadata = new BasicDBObject();
+        metadata.put("fileSize", upload.getSize());
+
+        Object fileID = template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(),
+                metadata);
+
+        ResearchPaper researchPaper = new ResearchPaper();
+        researchPaper.setResearchPaperId(fileID.toString());
+        researchPaper.setResearchPaperName(upload.getOriginalFilename().toString());
+        researchPaper.setApprovedStatus(false);
+        researchPaper.setTBDStatus(true);
+
+        researchPaperRepository.save(researchPaper);
+
+        return fileID.toString();
+    }
+
+    public String addWorkshopProposal(MultipartFile upload) throws IOException {
+
+        DBObject metadata = new BasicDBObject();
+        metadata.put("fileSize", upload.getSize());
+
+        Object fileID = template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(),
+                metadata);
+
+        WorkshopProposal workshopProposal = new WorkshopProposal();
+        workshopProposal.setWorkshopProposalId(fileID.toString());
+        workshopProposal.setWorkshopProposalName(upload.getOriginalFilename().toString());
+        workshopProposal.setApprovedStatus(false);
+        workshopProposal.setTBDStatus(true);
+
+        workshopRepository.save(workshopProposal);
 
         return fileID.toString();
     }

@@ -34,4 +34,12 @@ public class Conference {
         this.approved = approved;
     }
 
+    public void setNumberOfAttendees(int attendees){
+        this.numberOfAttendees = attendees;
+    }
+
+    public int getNumberOfAttendees(){
+        return this.numberOfAttendees;
+    }
+
 }

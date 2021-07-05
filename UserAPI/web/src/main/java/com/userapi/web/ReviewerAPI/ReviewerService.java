@@ -34,12 +34,22 @@ public class ReviewerService {
     }
 
     // Approve Decline Workshop
-    public void approveDeclineConferenceResearchPaper(ResearchPaper researchPaper) {
-        researchPaperRepository.save(researchPaper);
+    public void approveDeclineWorkshop(WorkshopProposal workshopProposal) {
+        WorkshopProposal wProposal = workshopRepository.findById(workshopProposal.getId()).orElse(null);
+        wProposal.setWorkshopProposalName(workshopProposal.getWorkshopProposalName());
+        wProposal.setWorkshopProposalId(workshopProposal.getWorkshopProposalId());
+        wProposal.setApprovedStatus(workshopProposal.getApprovedStatus());
+        wProposal.setTBDStatus(workshopProposal.getTBDStatus());
+        workshopRepository.save(wProposal);
     }
 
-    public void approveDeclineWorkshop(WorkshopProposal workshopProposal) {
-        workshopRepository.save(workshopProposal);
+    public void approveDeclinerResearchPaper(ResearchPaper researchPaper) {
+        ResearchPaper rPaper = researchPaperRepository.findById(researchPaper.getId()).orElse(null);
+        rPaper.setResearchPaperName(researchPaper.getResearchPaperName());
+        rPaper.setResearchPaperId(researchPaper.getResearchPaperId());
+        rPaper.setApprovedStatus(researchPaper.getApprovedStatus());
+        rPaper.setTBDStatus(researchPaper.getTBDStatus());
+        researchPaperRepository.save(rPaper);
     }
 
     public List<ResearchPaper> getAllResearchPapers() {

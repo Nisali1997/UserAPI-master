@@ -14,8 +14,25 @@ import lombok.NoArgsConstructor;
 public class ResearchPaper {
     @Id
     private String id;
-    private String ResearchPaperId;
-    private boolean ApprovedStatus;
+    private String researchPaperId;
+    private String researchPaperName;
+    private boolean approvedStatus;
     private boolean TBDStatus;
+
+    public boolean getApprovedStatus() {
+        return this.approvedStatus;
+    }
+
+    public boolean getTBDStatus() {
+        return this.TBDStatus;
+    }
+
+    public void setApprovedStatus(boolean approvedStatus) {
+        this.approvedStatus = approvedStatus;
+    }
+
+    public void setTBDStatus(boolean TBDStatus) {
+        this.TBDStatus = TBDStatus;
+    }
 
 }
