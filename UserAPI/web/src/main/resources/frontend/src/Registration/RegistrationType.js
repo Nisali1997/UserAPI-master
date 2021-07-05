@@ -39,9 +39,9 @@ class RegistrationType extends React.Component {
                   approval
                 </li>
                 <li>
-                  Next, you can register as a workshop presenter from the
-                  following section, where it displays whether your proposal is
-                  approved or not.
+                  Next, you can register as a workshop presenter from the{" "}
+                  <a href="#div_id">following section</a>, where it displays
+                  whether your proposal is approved or not.
                 </li>
               </ul>
             </li>
@@ -53,9 +53,9 @@ class RegistrationType extends React.Component {
                   approval
                 </li>
                 <li>
-                  Next, you can register as a researcher from the following
-                  section, where it displays whether your research paper is
-                  approved or not.
+                  Next, you can register as a researcher from the{" "}
+                  <a href="#div_id">following section</a>, where it displays
+                  whether your research paper is approved or not.
                 </li>
               </ul>
             </li>
@@ -73,7 +73,8 @@ class RegistrationType extends React.Component {
               <thead>
                 <tr>
                   <th scope="col">User Options</th>
-                  <th scope="col">Material Type(pdf)</th>
+                  <th scope="col">Material</th>
+                  <th scope="col">File Type</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
@@ -81,6 +82,7 @@ class RegistrationType extends React.Component {
                 <tr>
                   <th scope="row">Workshop Presenter</th>
                   <td>Workshop Proposal </td>
+                  <td>.pdf</td>
 
                   <td>
                     <a href="/workshop" class="btn btn-info" role="button">
@@ -91,7 +93,7 @@ class RegistrationType extends React.Component {
                 <tr>
                   <th scope="row">Researcher</th>
                   <td>Research Paper </td>
-
+                  <td>.pdf</td>
                   <td>
                     <a href="/researcher" class="btn btn-info" role="button">
                       Upload
@@ -110,6 +112,7 @@ class RegistrationType extends React.Component {
           class="btn-group"
           role="group"
           aria-label="Basic radio toggle button group"
+          id="div_id"
         >
           <div class="table-responsive">
             <table class="table align-middle">
@@ -206,13 +209,23 @@ class RegistrationType extends React.Component {
                   <td>7,000.00</td>
                   <td>Register for approved research papers</td>
                   <td>
-                    {/* <a className="nav-link" href="/workshop">
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
-        onChange={e => this.props.history.push('newRoute') || (window.location.href = "/workshop") }/>
-        <label class="btn btn-outline-primary" for="btnradio2">Register</label>
-        </a> */}
                     <a
                       href="/viewResearchPapers"
+                      class="btn btn-info"
+                      role="button"
+                    >
+                      Register
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Attendee</th>
+                  <td>10,000.00</td>
+                  <td>Register for a conference</td>
+                  <td>
+                    <a
+                      href="/viewApConferences"
                       class="btn btn-info"
                       role="button"
                     >

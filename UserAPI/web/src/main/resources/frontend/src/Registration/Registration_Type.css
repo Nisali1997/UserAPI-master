@@ -1,3 +1,11 @@
-.para{
-    text-align: left;
+.para {
+  text-align: left;
+}
+
+.li {
+  text-align: left;
+}
+
+.center {
+  background-color: aqua;
 }
