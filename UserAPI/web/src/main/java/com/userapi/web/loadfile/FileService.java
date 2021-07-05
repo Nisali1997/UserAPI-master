@@ -7,6 +7,10 @@ import com.mongodb.DBObject;
 import com.mongodb.client.gridfs.model.GridFSFile;
 
 // import org.apache.tomcat.util.http.fileupload.IOUtils;
+import com.userapi.web.models.ResearchPaper;
+import com.userapi.web.models.WorkshopProposal;
+import com.userapi.web.repositories.ResearchPaperRepository;
+import com.userapi.web.repositories.WorkshopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
