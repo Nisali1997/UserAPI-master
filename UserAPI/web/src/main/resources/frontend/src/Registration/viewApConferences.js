@@ -17,7 +17,7 @@ class viewApConferences extends React.Component {
   }
 
   componentWillMount() {
-    axios.get("http://localhost:8080/userapi/viewAllConference").then((res) => {
+    axios.get("http://localhost:8080/editorapi/viewAllConference").then((res) => {
       this.setState({
         conferences: res.data,
         id: "",
@@ -50,7 +50,7 @@ class viewApConferences extends React.Component {
       <div className="container">
         <h3 className="mt-4 mb-2">All conferences</h3>
         <div className="col s6">
-          <table>
+          <table class="table align-middle">
             <thead>
               <tr>
                 <th>Conference</th>

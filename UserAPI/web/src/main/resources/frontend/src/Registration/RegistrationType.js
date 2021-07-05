@@ -233,6 +233,10 @@ class RegistrationType extends React.Component {
                     </a>
                   </td>
                 </tr>
+
+
+                
+               
               </tbody>
             </table>
             <a href="/adminNavbar" class="btn btn-info" role="button">

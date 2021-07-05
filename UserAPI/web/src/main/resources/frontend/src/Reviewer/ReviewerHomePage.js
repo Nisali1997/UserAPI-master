@@ -18,7 +18,7 @@ class ReviewerHomePage extends React.Component{
                  <table className="table">
                      <tr>
                  <div class="btn-group" >
-                 <a href="/viewWorkshops" class="btn btn-info" role="button">View All Workshops</a>
+                 <a href="/approveWorkshopProposals" class="btn btn-info" role="button">View All Workshops</a>
                  </div>
                  </tr>
                 <br></br>

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import './ReviewerHomePage.css';
 
 class approveWorkshopProposals extends React.Component {
   constructor(props) {
@@ -128,12 +129,12 @@ class approveWorkshopProposals extends React.Component {
       <div className="container">
         <h3 className="mt-4 mb-2">Approve or Decline Workshop Proposals</h3>
         <div className="col s6">
-          <table>
+          <table class="table align-middle">
             <thead>
               <tr>
                 <th>Workshop Proposal</th>
                 <th>Approved Status</th>
-                <th>View</th>
+                <th> View</th>
                 <th>Approve</th>
                 <th>Decline</th>
               </tr>
@@ -146,6 +147,7 @@ class approveWorkshopProposals extends React.Component {
                   <StatusChecking approvedOrNot={proposal.ApprovedStatus} />
                   <td>
                     <button
+                    className="btn-table"
                       onClick={(e) => this.viewpdf(proposal.workshopProposalId)}
                       className="btn waves-effect waves-light"
                     >
@@ -154,6 +156,7 @@ class approveWorkshopProposals extends React.Component {
                   </td>
                   <td>
                     <button
+                    class="btn btn-info" role="button"
                       onClick={(e) =>
                         this.approveWorkshop(
                           proposal.id,
@@ -168,6 +171,7 @@ class approveWorkshopProposals extends React.Component {
                   </td>
                   <td>
                     <button
+                    class="btn btn-info" role="button"
                       onClick={(e) =>
                         this.declineWorkshop(
                           proposal.id,

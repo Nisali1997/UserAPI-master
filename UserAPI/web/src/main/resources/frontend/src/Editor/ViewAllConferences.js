@@ -26,7 +26,7 @@ class ViewConferences extends React.Component{
              <div className="container">
                  <h1>Conferences</h1>
                  {this.state.conference.length>0 && this.state.conference.map((item,index)=>(
-                     <div key={index} className="card mb-3">
+                     <div key={index} className="card border-primary mb-3">
                          <div className="p-3" onClick={e=>this.navigateConferencePage(e,item._id)} >
                          <h4>Conference Name : {item.conferenceName}</h4>
                          <h5>Date : {item.date}</h5>
@@ -35,7 +35,7 @@ class ViewConferences extends React.Component{
                             <h5>Duration : {item.duration}</h5>
                             <h5>Number of Attendees : {item.numberOfAttendees}</h5>
                             <h5>Maximum Number of Attendees :{item.maximumAttendees}</h5>
-                        <button onClick={e=>this.navigateConferencePage(e,item._id)}>Edit</button>
+                        {/* <button onClick={e=>this.navigateConferencePage(e,item._id)}>Edit</button> */}
                          </div>
                      </div>
                  ))}
