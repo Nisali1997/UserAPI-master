@@ -13,8 +13,11 @@ class ReviewerHomePage extends React.Component{
 
     render() {
         return (
+            <div className="background">
              <div className="container">
+                 
                  <h1>Welcome</h1>
+                 <br></br><br></br>
                  <table className="table">
                      <tr>
                  <div class="btn-group" >
@@ -28,7 +31,9 @@ class ReviewerHomePage extends React.Component{
                  </div>
                  </tr>
                  </table>
-                
+                 </div>
+                 <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br><br></br><br></br><br></br><br></br>
+                 <br></br><br></br><br></br><br></br>
              </div>
         );
     }

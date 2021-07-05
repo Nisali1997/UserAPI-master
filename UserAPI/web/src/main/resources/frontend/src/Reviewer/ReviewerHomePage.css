@@ -4,4 +4,18 @@
 
 .btn-table{
     border-radius: 2cm;
+    transition-duration: 0.4s;
 }
+
+.btn-table:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+  .background{
+    background-image: url("C:\Users\Tharushi\Documents\GitHub\UserAPI-master\UserAPI\web\src\main\resources\frontend\src\images\rm222-mind-22_1_2.jpg"); 
+    background-color: aqua;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

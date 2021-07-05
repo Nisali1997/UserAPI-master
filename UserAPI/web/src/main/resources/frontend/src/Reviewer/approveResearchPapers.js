@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import './ReviewerHomePage.css'
 
 class approveResearchPapers extends React.Component {
   constructor(props) {
@@ -125,14 +126,16 @@ class approveResearchPapers extends React.Component {
       return <Declined />;
     }
     return (
+      <div className="background">
       <div className="container">
-        <h3 className="mt-4 mb-2">Approve or Decline Research papers</h3>
+        <h2 className="mt-4 mb-2">Approve or Decline Research papers</h2>
+        <br></br>
         <div className="col s6">
-          <table>
+          <table class="table align-middle">
             <thead>
               <tr>
                 <th>Research Paper</th>
-                <th>Approved Status</th>
+                {/* <th>Approved Status</th> */}
                 <th>View</th>
                 <th>Approve</th>
                 <th>Decline</th>
@@ -143,17 +146,19 @@ class approveResearchPapers extends React.Component {
               {this.state.papers.map((proposal) => (
                 <tr key={proposal.id}>
                   <td>{proposal.researchPaperName}</td>
-                  <td>{proposal.approvedStatus} </td>
+                  {/* <td>{proposal.approvedStatus} </td> */}
                   <td>
                     <button
+                    className="btn btn-primary"
                       onClick={(e) => this.viewpdf(proposal.researchPaperId)}
-                      className="btn waves-effect waves-light"
+                      // className="btn waves-effect waves-light"
                     >
                       View
                     </button>
                   </td>
                   <td>
                     <button
+                    className="btn btn-primary"
                       onClick={(e) =>
                         this.approvePaper(
                           proposal.id,
@@ -161,13 +166,14 @@ class approveResearchPapers extends React.Component {
                           proposal.researchPaperName
                         )
                       }
-                      className="btn waves-effect waves-light"
+                      // className="btn waves-effect waves-light"
                     >
                       Approve
                     </button>
                   </td>
                   <td>
                     <button
+                    className="btn btn-primary"
                       onClick={(e) =>
                         this.declinePaper(
                           proposal.id,
@@ -175,7 +181,7 @@ class approveResearchPapers extends React.Component {
                           proposal.researchPaperName
                         )
                       }
-                      className="btn waves-effect waves-light"
+                      // className="btn waves-effect waves-light"
                     >
                       Decline
                     </button>
@@ -185,6 +191,8 @@ class approveResearchPapers extends React.Component {
             </tbody>
           </table>
         </div>
+        </div>
+        <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
       </div>
     );
   }

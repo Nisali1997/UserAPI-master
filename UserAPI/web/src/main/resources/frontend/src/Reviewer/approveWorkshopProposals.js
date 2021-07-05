@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import './ReviewerHomePage.css';
+import './ReviewerHomePage.css'
 
 class approveWorkshopProposals extends React.Component {
   constructor(props) {
@@ -126,14 +126,16 @@ class approveWorkshopProposals extends React.Component {
       return <Declined />;
     }
     return (
+      <div className="background">
       <div className="container">
-        <h3 className="mt-4 mb-2">Approve or Decline Workshop Proposals</h3>
+        <h4 className="mt-4 mb-2">Approve or Decline Workshop Proposals</h4>
+        <br></br>
         <div className="col s6">
           <table class="table align-middle">
             <thead>
               <tr>
                 <th>Workshop Proposal</th>
-                <th>Approved Status</th>
+                {/* <th>Approved Status</th> */}
                 <th> View</th>
                 <th>Approve</th>
                 <th>Decline</th>
@@ -144,19 +146,20 @@ class approveWorkshopProposals extends React.Component {
               {this.state.proposals.map((proposal) => (
                 <tr key={proposal.id}>
                   <td>{proposal.workshopProposalName}</td>
-                  <StatusChecking approvedOrNot={proposal.ApprovedStatus} />
+                  {/* <StatusChecking approvedOrNot={proposal.ApprovedStatus} /> */}
+                  
                   <td>
                     <button
-                    className="btn-table"
+                    className="btn btn-primary"
                       onClick={(e) => this.viewpdf(proposal.workshopProposalId)}
-                      className="btn waves-effect waves-light"
+                      // className="btn waves-effect waves-light"
                     >
                       View
                     </button>
                   </td>
                   <td>
                     <button
-                    class="btn btn-info" role="button"
+                   className="btn btn-primary"
                       onClick={(e) =>
                         this.approveWorkshop(
                           proposal.id,
@@ -164,14 +167,14 @@ class approveWorkshopProposals extends React.Component {
                           proposal.workshopProposalName
                         )
                       }
-                      className="btn waves-effect waves-light"
+                      // className="btn waves-effect waves-light"
                     >
                       Approve
                     </button>
                   </td>
                   <td>
                     <button
-                    class="btn btn-info" role="button"
+                   className="btn btn-primary"
                       onClick={(e) =>
                         this.declineWorkshop(
                           proposal.id,
@@ -179,16 +182,20 @@ class approveWorkshopProposals extends React.Component {
                           proposal.workshopProposalName
                         )
                       }
-                      className="btn waves-effect waves-light"
+                      // className="btn waves-effect waves-light"
                     >
                       Decline
                     </button>
                   </td>
                 </tr>
+                
               ))}
+             
             </tbody>
           </table>
         </div>
+        </div>
+        <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
       </div>
     );
   }
