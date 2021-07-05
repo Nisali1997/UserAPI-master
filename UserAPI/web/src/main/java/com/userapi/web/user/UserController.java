@@ -7,6 +7,8 @@ import com.userapi.web.EditorAPI.EditorService;
 import com.userapi.web.loadfile.FileService;
 import com.userapi.web.models.Conference;
 
+import com.userapi.web.models.ResearchPaper;
+import com.userapi.web.models.WorkshopProposal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

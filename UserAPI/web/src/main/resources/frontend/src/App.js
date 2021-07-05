@@ -25,6 +25,7 @@ import PresenterRegistration from "./Registration/Presenter_Registration";
 import approveWorkshopProposals from "./Reviewer/approveWorkshopProposals";
 import viewResearchPapers from "./Registration/viewResearchPapers";
 import ResearcherRegistration from "./Registration/Registration_Researcher";
+import ReviewerHomePage from "./Reviewer/ReviewerHomePage";
 
 function App() {
   return (
@@ -77,7 +78,8 @@ function App() {
             <Route path="/editor" component={EditorHomePage} />
             <Route path="/editorCreate" component={CreateConference} />
             <Route path="/editorView" component={ViewConferences} />
-            <Route path="/:id" component={ViewCetainConference} />
+            {/* <Route path="/:id" component={ViewCetainConference} /> */}
+            <Route path="/reviewer" component={ReviewerHomePage}/>
           </Switch>
         </section>
       </Router>

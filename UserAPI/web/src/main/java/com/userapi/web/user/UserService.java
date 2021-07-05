@@ -3,8 +3,12 @@ package com.userapi.web.user;
 import java.util.List;
 
 import com.userapi.web.models.Conference;
+import com.userapi.web.models.ResearchPaper;
+import com.userapi.web.models.WorkshopProposal;
 import com.userapi.web.repositories.ConferenceRepository;
 
+import com.userapi.web.repositories.ResearchPaperRepository;
+import com.userapi.web.repositories.WorkshopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
