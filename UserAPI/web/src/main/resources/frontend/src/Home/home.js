@@ -11,10 +11,11 @@ class Home extends Component{
          }
     }
 
-    componentDidMount(){
-        axios.get('http://localhost:8080/editorapi/viewApprovedConferences')
-        .then(response=>{
-            this.setState({conference: response.data.data})
+        componentDidMount(){
+        axios.get('http://localhost:8080/editorapi/viewAllConference')
+        .then(responce=>{
+            
+            this.setState({conference: responce.data})
         })
     }
 
@@ -44,18 +45,28 @@ class Home extends Component{
                    
                     <h3>All Conferences</h3>
                        <span class="badge rounded-pill bg-primary">Approved Conferences</span>
-                       {this.state.conference.length>0 && this.state.conference.map((item,index)=>(
+                       {/* {this.state.conference.length>0 && this.state.conference.map((item,index)=>(
                         <div key={index} className="card border-primary mb-3">
                         <div className="p-3">
                             <div class="card-header">{item.conferenceId}</div>
-                            <h5>{item.ConferenceName}</h5>
-                            <h5>Date : {item.Date}</h5>
-                            <h5>Venue : {item.Venue}</h5>
-                            <h5>Start Time : {item.StartTime}</h5>
+                            <h5>{item.conferenceName}</h5>
+                            <h5>Date : {item.date}</h5>
+                            <h5>Venue : {item.venue}</h5>
+                            <h5>Start Time : {item.startTime}</h5>
                             </div>
 
                     </div>
-                ))}
+                ))} */}
+                 {this.state.conference.length>0 && this.state.conference.map((item,index)=>(
+                     <div key={index} className="card mb-3">
+                         <div className="p-3" onClick={e=>this.navigateConferencePage(e,item._id)} >
+                         <h4>Conference Name : {item.conferenceName}</h4>
+                         <h5>Date : {item.date}</h5>
+                         <h5>Venue : {item.venue}</h5>
+                        
+                         </div>
+                     </div>
+                 ))}
 
 
                        

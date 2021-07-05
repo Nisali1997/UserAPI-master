@@ -12,7 +12,7 @@ class RegistrationType extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="container">
                 <br></br>
 <h2>Registration</h2>
 <br></br>
@@ -109,38 +109,13 @@ class RegistrationType extends React.Component{
 
     </tbody>
   </table>
+  <a href="/adminNavbar" class="btn btn-info" role="button">Other</a>
 </div>
-{/* <a className="nav-link" href="/ws_presenter">
-  <input type="radio"  class="btn-check" name="btnradio"  id="btnradio1" autocomplete="off"
-  onChange={e => this.props.history.push('newRoute') || (window.location.href = "/ws_presenter") }/>
-  <label class="btn btn-outline-primary" for="btnradio1">Full conference (Presenter)</label>
-  </a>
-  
-
- <a className="nav-link" href="/participent">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
-  onChange={e => this.props.history.push('newRoute') || (window.location.href = "/participent") }/>
-  <label class="btn btn-outline-primary" for="btnradio2">Participant </label>
-  </a>
-
-  <a className="nav-link" href="/researcher">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
-  onChange={e => this.props.history.push('newRoute') || (window.location.href = "/researcher") }/>
-  <label class="btn btn-outline-primary" for="btnradio2">Researcher</label>
-  </a>
-
-  <a className="nav-link" href="/workshop">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
-  onChange={e => this.props.history.push('newRoute') || (window.location.href = "/workshop") }/>
-  <label class="btn btn-outline-primary" for="btnradio2">Workshop Only</label>
-  </a>
 
 
-  <a className="nav-link" href="/other">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"
-  onChange={e => this.props.history.push('newRoute') || (window.location.href = "/other")}/>
-  <label class="btn btn-outline-primary" for="btnradio3">Other</label>
-  </a> */}
+
+
+
 </div>
 
             </div>

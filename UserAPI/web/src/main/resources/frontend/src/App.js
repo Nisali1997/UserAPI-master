@@ -12,13 +12,17 @@ import Home from './Home/home';
 import LoginFormAttendee from './Login/loginFormAttendee';
 import LoginFormResearcher from './Login/loginFormReseacher';
 import LoginFormWorkshopConductor from './Login/loginFormWorkshopConductor';
-import ResearchActivity from './Registration/ResearchActivity';
+import AdminNavbar from './AdminNavBar/AdminNavBar';
+import EditorHomePage from './Editor/EditorHomePage';
+import CreateConference from './Editor/AddConference';
+import ViewConferences from './Editor/ViewAllConferences';
+
 
 function App() {
   return (
     <div className="App">
      <Router>
-       <Navbar/>
+      <Navbar/>
        <section>
          <Switch>
            <Route path="/home" component={Home}/>
@@ -33,10 +37,26 @@ function App() {
            <Route path="/loginFormAttendee" component={LoginFormAttendee}/>
            <Route path="/loginFormResearcher" component={LoginFormResearcher}/>
            <Route path="/loginFormWorkshopConductor" component={LoginFormWorkshopConductor}/>
-           <Route path="/ractivities" component={ResearchActivity}/>
-
+          <Route path="/adminNavbar" component={AdminNavbar}/>
+          <Route path="/editor" component={EditorHomePage}/>
+          <Route path="/editorCreate" component={CreateConference}/>
+          <Route path="/editorView" component={ViewConferences}/>
          </Switch>
-       </section>
+         </section>
+     
+     </Router>
+        
+     <Router>
+      
+      <section>
+        <Switch>
+          <Route path="/AdminNavBar/AdminNavBar">
+          <AdminNavbar/>
+          </Route>
+
+         
+        </Switch>
+      </section>
      </Router>
 
     
