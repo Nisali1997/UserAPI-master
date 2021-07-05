@@ -1,0 +1,8 @@
+.home{
+    /* background-image: url('images/rm222-mind-22_1_2.jpg'); */
+    background-image: url("C:\Users\Tharushi\Documents\GitHub\UserAPI-master\UserAPI\web\src\main\resources\frontend\src\images\rm222-mind-22_1_2.jpg"); 
+    background-color: aqua;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class RegistrationType extends React.Component{
     constructor(props){
         super(props);

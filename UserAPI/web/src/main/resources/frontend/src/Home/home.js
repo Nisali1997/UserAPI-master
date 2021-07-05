@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import '../Home/home.css'
 
 
 class Home extends Component{
@@ -26,8 +27,10 @@ class Home extends Component{
 
     render(){
         return(
-            <div>
-                
+            <div className="home">
+                <div styles={{ img: "url(/images/452059.png)" }}>
+               
+    </div>
                 <br></br> <br></br> <br></br><br></br>
                 <div> 
                     <h1 >ICAF 2021</h1>

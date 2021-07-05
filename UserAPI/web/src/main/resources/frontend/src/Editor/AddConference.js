@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import './addConference.css';
 
 class CreateConference extends React.Component{
     constructor(props){
@@ -49,12 +50,18 @@ class CreateConference extends React.Component{
         return (
              <div className="container">
                  <h1>Create Conference</h1>
-                 <form onSubmit={this.onSubmit}>
+                
+                 <form onSubmit={this.onSubmit}  class="form-horizontal">
 
-  <div className="mb-3">
+                 
+
+
+   <div className="mb-3">
     <label htmlFor="Type" class="form-label">Conference Name</label>
     <input type="text" class="form-control" id="Type" name="cconferenceName" value={this.state.cconferenceName} onChange={this.onChange} aria-describedby="emailHelp"/>
   </div>
+
+
 
   <div className="mb-3">
     <label htmlFor="Type" class="form-label">Date</label>
@@ -84,16 +91,14 @@ class CreateConference extends React.Component{
   <div class="mb-3">
     <label for="categoryAmount" class="form-label">Maximum Number of Attendees</label>
     <input type="Number" class="form-control" id="categoryAmount" name="cmaximumAttendees" value={this.state.cmaximumAttendees} onChange={this.onChange} />
-  </div>
+  </div> 
 
-  {/* <div class="mb-3">
-  <label for="categoryAmount" class="form-label">Approve</label>
-    <input type="Boolean" class="form-control" id="categoryAmount" name="capproved" value={this.state.capproved} onChange={this.onChange} />
-  </div> */}
+  
 
-   
+   {/* <div data-testid="button">{label}</div> */}
   <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+  </form>
 
              </div>
         );

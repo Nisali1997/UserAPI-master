@@ -19,13 +19,16 @@ import ViewConferences from './Editor/ViewAllConferences';
 import ViewCetainConference from './Editor/ViewCertainConference';
 
 
+
 function App() {
   return (
     <div className="App">
      <Router>
       <Navbar/>
+   
        <section>
          <Switch>
+        
            <Route path="/home" component={Home}/>
            <Route path="/reg-type" component={RegistrationType}/>
            <Route path="/participent" component={ParticipentRegistration}/>
