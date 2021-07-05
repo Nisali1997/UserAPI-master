@@ -1,127 +1,229 @@
-import React from 'react';
+import React from "react";
+import "./Registration_Type.css";
 
+class RegistrationType extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+  }
 
-class RegistrationType extends React.Component{
-    constructor(props){
-        super(props);
-        this.onChange=this.onChange.bind(this);
-    }
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
-    onChange(e){
-        this.setState({[e.target.name]: e.target.value })
-    }
+  render() {
+    return (
+      <div className="container col-md-6">
+        <br></br>
+        <h2>Registration</h2>
+        <br></br>
 
-    render(){
-        return(
-            <div className="container">
-                <br></br>
-<h2>Registration</h2>
-<br></br>
+        <div
+          style={{
+            textAlign: "left",
+            backgroundColor: "#EBF5FB",
+            padding: "7px",
+            margin: "5px",
+            border: "1px solid black",
+            borderRadius: "8px",
+          }}
+        >
+          <h5 style={{ fontWeight: "bold" }}>Instructions</h5>
+          <ul>
+            <li>
+              To register as a Workshop Presenter,
+              <ul>
+                <li>
+                  First, you must upload a worskhop proposal and wait for
+                  approval
+                </li>
+                <li>
+                  If it is approved, you can register as a workshop presenter
+                </li>
+                <li>
+                  You can view the approved workshop proposals from below.
+                </li>
+              </ul>
+            </li>
+            <li>
+              To register as a Researcher,
+              <ul>
+                <li>
+                  First, you must upload a research paper and wait for the
+                  approval
+                </li>
+                <li>If it is approved, you can register as a researcher</li>
+                <li>You can view the approved research papers from below.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-<h3>Registration Fees</h3>
+        <div
+          className="mt-3"
+          style={{ border: "1px solid black", marginTop: "5px" }}
+        >
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">User Options</th>
+                  <th scope="col">Material Type(pdf)</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Workshop Presenter</th>
+                  <td>Workshop Proposal </td>
 
-<hr></hr>
-<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                  <td>
+                    <a href="/workshop" class="btn btn-info" role="button">
+                      Upload
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Researcher</th>
+                  <td>Research Paper </td>
 
-<div class="table-responsive">
-  <table class="table align-middle">
-    <thead>
-      <tr>
-         <th scope="col">Registration Options</th>
-      <th scope="col">Registration fee Local (LKR)</th>
-      <th scope="col">Includes</th>
-      <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Full conference (Presenter)</th>
-        <td>40,000.00	</td>
-        
-        <td>Paper Presentation up-to one paper Access to all the technical sessions and workshops Conference kitNon-transferable and non- refundable</td>
-        <td>
-            {/* <a className="nav-link" href="/ws_presenter">
+                  <td>
+                    <a href="/workshop" class="btn btn-info" role="button">
+                      Upload
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h3>Registration Fees</h3>
+
+        <hr></hr>
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Registration Options</th>
+                  <th scope="col">Registration fee Local (LKR)</th>
+                  <th scope="col">Includes</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Full conference (Presenter)</th>
+                  <td>40,000.00 </td>
+
+                  <td>
+                    Paper Presentation up-to one paper Access to all the
+                    technical sessions and workshops Conference
+                    kitNon-transferable and non- refundable
+                  </td>
+                  <td>
+                    {/* <a className="nav-link" href="/ws_presenter">
             <input type="radio"  class="btn-check" name="btnradio"  id="btnradio1" autocomplete="off"
             onChange={e => this.props.history.push('newRoute') || (window.location.href = "/ws_presenter") }/>
             <label class="btn btn-outline-primary" for="btnradio1">Register</label>
             </a> */}
-              <a href="/ws_presenter" class="btn btn-info" role="button">Register</a>
-        </td>
-      </tr>
-      
-      <tr class="align-bottom">
-        <th scope="row">Guest</th>
-        <td>10,000.00	</td>
-        <td>Access to all technical sessions including workshops on a selected day</td>
-        <td>
-          {/* <a className="nav-link" href="/participent">
+                    <a href="/ws_presenter" class="btn btn-info" role="button">
+                      Register
+                    </a>
+                  </td>
+                </tr>
+
+                <tr class="align-bottom">
+                  <th scope="row">Guest</th>
+                  <td>10,000.00 </td>
+                  <td>
+                    Access to all technical sessions including workshops on a
+                    selected day
+                  </td>
+                  <td>
+                    {/* <a className="nav-link" href="/participent">
           <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
           onChange={e => this.props.history.push('newRoute') || (window.location.href = "/participent") }/>
           <label class="btn btn-outline-primary" for="btnradio2">Register </label>
           </a> */}
-          <a href="/participent" class="btn btn-info" role="button">Register</a>
-        </td>
-      </tr>
-      
-      <tr>
-      <th scope="row">Researcher</th>
-        <td>5,000.00</td>
-        <td>Access to all technical sessions and keynote speeches and No workshop participation</td>
-        <td>
-          {/* <a className="nav-link" href="/researcher">
+                    <a href="/participent" class="btn btn-info" role="button">
+                      Register
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Researcher</th>
+                  <td>5,000.00</td>
+                  <td>
+                    Access to all technical sessions and keynote speeches and No
+                    workshop participation
+                  </td>
+                  <td>
+                    {/* <a className="nav-link" href="/researcher">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
         onChange={e => this.props.history.push('newRoute') || (window.location.href = "/researcher") }/>
         <label class="btn btn-outline-primary" for="btnradio2">Register</label>
         </a> */}
-        <a href="/researcher" class="btn btn-info" role="button">Register</a>
-        </td>
-      </tr>
+                    <a href="/researcher" class="btn btn-info" role="button">
+                      Register
+                    </a>
+                  </td>
+                </tr>
 
-
-      <tr>
-    <th scope="row">Workshop Only</th>
-    <td>7,000.00</td>
-        <td>All Workshops</td>
-        <td>
-          {/* <a className="nav-link" href="/workshop">
+                <tr>
+                  <th scope="row">Workshop Presenter</th>
+                  <td></td>
+                  <td>Register for approved workshop proposals</td>
+                  <td>
+                    {/* <a className="nav-link" href="/workshop">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
         onChange={e => this.props.history.push('newRoute') || (window.location.href = "/workshop") }/>
         <label class="btn btn-outline-primary" for="btnradio2">Register</label>
         </a> */}
-        <a href="/workshop" class="btn btn-info" role="button">Register</a>
-  </td>
-      </tr>
+                    <a
+                      href="//viewWorkshopProposals"
+                      class="btn btn-info"
+                      role="button"
+                    >
+                      Register
+                    </a>
+                  </td>
+                </tr>
 
-      <tr>
-    <th scope="row">Research Activities Only</th>
-    <td>7,000.00</td>
-        <td>All Research Activities</td>
-        <td>
-          {/* <a className="nav-link" href="/workshop">
+                <tr>
+                  <th scope="row">Researcher</th>
+                  <td>7,000.00</td>
+                  <td>Register for approved research papers</td>
+                  <td>
+                    {/* <a className="nav-link" href="/workshop">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
         onChange={e => this.props.history.push('newRoute') || (window.location.href = "/workshop") }/>
         <label class="btn btn-outline-primary" for="btnradio2">Register</label>
         </a> */}
-        <a href="/ractivities" class="btn btn-info" role="button">Register</a>
-  </td>
-      </tr>
-
-      
-
-    </tbody>
-  </table>
-  <a href="/adminNavbar" class="btn btn-info" role="button">Other</a>
-</div>
-
-
-
-
-
-</div>
-
-            </div>
-        )
-    }
+                    <a
+                      href="/viewResearchPapers"
+                      class="btn btn-info"
+                      role="button"
+                    >
+                      Register
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="/adminNavbar" class="btn btn-info" role="button">
+              Other
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default RegistrationType
+export default RegistrationType;

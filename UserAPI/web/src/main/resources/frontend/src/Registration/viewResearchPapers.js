@@ -108,7 +108,7 @@ class viewResearchPapers extends React.Component {
                   </td>
                   <td>
                     <button
-                      onClick={(e) => this.register(proposal.researchPaperId)}
+                      onClick={(e) => this.register(paper.researchPaperId)}
                       className="btn waves-effect waves-light"
                     >
                       Register
