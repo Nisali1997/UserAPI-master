@@ -29,7 +29,7 @@ import ReviewerHomePage from "./Reviewer/ReviewerHomePage";
 // import approveWorkshopProposals from "./Reviewer/approveWorkshopProposals";
 import approveResearchPapers from "./Reviewer/approveResearchPapers";
 import viewApConferences from "./Registration/viewApConferences";
-
+import Admin from "./Admin/Admin";
 function App() {
   return (
     <div className="App">
@@ -82,6 +82,7 @@ function App() {
             <Route path="/editor" component={EditorHomePage} />
             <Route path="/editorCreate" component={CreateConference} />
             <Route path="/editorView" component={ViewConferences} />
+            <Route path="/admin" component={Admin} />
             {/* <Route path="/:id" component={ViewCetainConference} /> */}
             <Route path="/reviewer" component={ReviewerHomePage}/>
               <Route path="/viewReseachePP" component={approveResearchPapers}/>

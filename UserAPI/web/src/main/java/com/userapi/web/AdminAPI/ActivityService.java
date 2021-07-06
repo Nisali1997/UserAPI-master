@@ -17,6 +17,6 @@ public class ActivityService {
 
     public void addActivity(String type,String description){
         Activity activity = new Activity();
-        activityRepository.insert(activity);
+        activityRepository.save(activity);
     }
 }

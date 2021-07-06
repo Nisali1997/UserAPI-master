@@ -62,7 +62,6 @@ public class AdminController {
 
     @GetMapping(path = "/viewAllActivities")
     public List<Activity> viewAllActivities() {
-
         return adminService.viewAllActivities();
     }
 

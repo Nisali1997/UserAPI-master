@@ -1,13 +1,15 @@
 package com.userapi.web.models;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDateTime;
 
-import java.util.Date;
 @Document
 @Data
 @AllArgsConstructor
@@ -15,8 +17,13 @@ import java.util.Date;
 public class Activity {
     @Id
     private String id;
+    @Field("type")
     private String type;
-    private Date date;
+    @Field("date")
+    private LocalDateTime date = java.time.LocalDateTime.now();
+    @Field("description")
     private String description;
+    @Field("userId")
     private String userId;
+
 }
