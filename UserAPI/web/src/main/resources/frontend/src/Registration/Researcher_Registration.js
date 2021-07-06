@@ -48,7 +48,7 @@ class Researcher extends React.Component {
         <br></br>
         <br></br>
         <form>
-          <div class="mb-3">
+          <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
             <label for="passt" class="form-label">
               Upload Document
             </label>

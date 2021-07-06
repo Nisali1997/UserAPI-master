@@ -52,7 +52,7 @@ class ParticipentRegistration extends React.Component {
         <br></br>
         <h3>Conference Participant Registration</h3>
         <form onSubmit={(e) => this.onSubmit(e, id)}>
-          <div className="mb-3">
+          <div className="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
             <label htmlFor="Type" class="form-label">
               Name
             </label>
@@ -67,7 +67,7 @@ class ParticipentRegistration extends React.Component {
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
             <label for="email" class="form-label">
               Email
             </label>
@@ -81,7 +81,7 @@ class ParticipentRegistration extends React.Component {
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
             <label for="number" class="form-label">
               Contact Number
             </label>
@@ -95,7 +95,7 @@ class ParticipentRegistration extends React.Component {
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
             <label for="passt" class="form-label">
               Password
             </label>
@@ -109,7 +109,7 @@ class ParticipentRegistration extends React.Component {
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
             <label for="passt" class="form-label">
               Payment Method
             </label>
@@ -123,7 +123,7 @@ class ParticipentRegistration extends React.Component {
             />
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3" style={{ width: "50%", marginLeft: "25%" }}>
             <label for="passt" class="form-label">
               Amount
             </label>
