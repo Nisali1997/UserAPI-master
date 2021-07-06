@@ -16,11 +16,11 @@ public class WorkshopProposal {
     private String id;
     private String workshopProposalId;
     private String workshopProposalName;
-    private boolean ApprovedStatus;
+    private boolean approvedStatus;
     private boolean TBDStatus;
 
     public boolean getApprovedStatus() {
-        return this.ApprovedStatus;
+        return this.approvedStatus;
     }
 
     public boolean getTBDStatus() {
@@ -28,7 +28,7 @@ public class WorkshopProposal {
     }
 
     public void setApprovedStatus(boolean ApprovedStatus) {
-        this.ApprovedStatus = ApprovedStatus;
+        this.approvedStatus = ApprovedStatus;
     }
 
     public void setTBDStatus(boolean TBDStatus) {

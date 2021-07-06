@@ -98,4 +98,13 @@ public class UserService {
         return workshopRepository.findAll();
     }
 
+    public List<WorkshopProposal> getApprovedWorkshops() {
+        return workshopRepository.findByApprovedStatus(true);
+    }
+
+    public List<ResearchPaper> getApprovedResearchPapers() {
+        return researchPaperRepository.findByApprovedStatus(true);
+    }
+
+
 }

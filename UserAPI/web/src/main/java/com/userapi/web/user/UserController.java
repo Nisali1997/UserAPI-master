@@ -108,6 +108,17 @@ public class UserController {
         userService.addNewAttendee(attendee);
     }
 
+    @GetMapping("/viewApprovedWorkshops")
+    public List<WorkshopProposal> getAllApprovedWorkshops() {
+        return userService.getApprovedWorkshops();
+    }
+
+
+    @GetMapping("/viewApprovedResearchPapers")
+    public List<ResearchPaper> getAllApprovedResearchPapers() {
+        return userService.getApprovedResearchPapers();
+    }
+
     // @PostMapping("/createConferenceRequest ")
     // public void registerNewUser(@RequestBody User user, @RequestParam("file")
     // MultipartFile file) throws IOException {

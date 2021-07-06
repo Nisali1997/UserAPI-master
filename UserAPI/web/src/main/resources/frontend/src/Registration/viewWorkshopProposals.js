@@ -19,7 +19,7 @@ class viewWorkshopProposals extends React.Component {
 
   componentWillMount() {
     axios
-      .get("http://localhost:8080/userapi/viewAllWorkshopProposals")
+      .get("http://localhost:8080/userapi/viewApprovedWorkshops")
       .then((res) => {
         this.setState({
           proposals: res.data,
@@ -81,6 +81,7 @@ class viewWorkshopProposals extends React.Component {
       return <Declined />;
     }
     return (
+      <div className="background">
       <div className="container">
         <h3 className="mt-4 mb-2">Workshop Proposals</h3>
         <div className="col s6">
@@ -88,7 +89,7 @@ class viewWorkshopProposals extends React.Component {
             <thead>
               <tr>
                 <th>Workshop Proposal</th>
-                <th>Approved Status</th>
+                {/* <th>Approved Status</th> */}
                 <th>View</th>
                 <th>Register</th>
               </tr>
@@ -98,7 +99,7 @@ class viewWorkshopProposals extends React.Component {
               {this.state.proposals.map((proposal) => (
                 <tr key={proposal.id}>
                   <td>{proposal.workshopProposalName}</td>
-                  <StatusChecking approvedOrNot={proposal.ApprovedStatus} />
+                  {/* <StatusChecking approvedOrNot={proposal.ApprovedStatus} /> */}
                   <td>
                     <button
                       onClick={(e) => this.viewpdf(proposal.workshopProposalId)}
@@ -148,6 +149,8 @@ class viewWorkshopProposals extends React.Component {
             </Link>
           </Router> */}
         </div>
+  </div>
+  <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       </div>
     );
   }

@@ -19,7 +19,7 @@ class viewResearchPapers extends React.Component {
 
   componentWillMount() {
     axios
-      .get("http://localhost:8080/userapi/viewAllResearchPapers")
+      .get("http://localhost:8080/userapi/viewApprovedResearchPapers ")
       .then((res) => {
         this.setState({
           papers: res.data,
@@ -80,6 +80,7 @@ class viewResearchPapers extends React.Component {
       return <Declined />;
     }
     return (
+      <div className="background">
       <div className="container">
         <h3 className="mt-4 mb-2">Research papers</h3>
         <div className="col s6">
@@ -87,7 +88,7 @@ class viewResearchPapers extends React.Component {
             <thead>
               <tr>
                 <th>Research Paper</th>
-                <th>Approved Status</th>
+                {/* <th>Approved Status</th> */}
                 <th>View</th>
                 <th>Register</th>
               </tr>
@@ -97,7 +98,7 @@ class viewResearchPapers extends React.Component {
               {this.state.papers.map((paper) => (
                 <tr key={paper.id}>
                   <td>{paper.researchPaperName}</td>
-                  <StatusChecking approvedOrNot={paper.ApprovedStatus} />
+                  {/* <StatusChecking approvedOrNot={paper.ApprovedStatus} /> */}
                   <td>
                     <button
                       onClick={(e) => this.viewpdf(paper.researchPaperId)}
@@ -141,6 +142,7 @@ class viewResearchPapers extends React.Component {
               Register
             </Link>
           </Router> */}
+        </div>
         </div>
       </div>
     );
